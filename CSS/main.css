@@ -1,0 +1,192 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #131313;
+}
+.container{
+    position: absolute;
+    display: flex;
+    gap: 20px;
+}
+.card{
+    position: relative;
+    width: 320px;
+    height: 450px;
+    background-color: #232323;
+    border-radius: 30px;
+    overflow: hidden;
+}
+.container .card::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:#f47208 ;
+    clip-path: polygon(100% 0,20% 0,100% 82%);
+    /* clip-path: polygon(100% 0, 0 0, 100% 100%); */
+    transition:ease-in-out 0.5s;
+}
+.container .card:nth-child(2)::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:#08adf4 ;
+    clip-path: polygon(100% 0,20% 0,100% 82%);
+    /* clip-path: polygon(100% 0, 0 0, 100% 100%); */
+    transition:ease-in-out 0.5s;
+}
+.container .card:hover::before{
+clip-path:polygon(100% 0,0 0,100% 38%);
+}
+
+.container .card::after{
+    content:'Rebal';
+    position: absolute;
+    top:50%;
+    left:-20%;
+    font-size:9em;
+    font-weight: 800;
+    font-style: italic;
+    color:rgba(225, 225, 225, 0.05);
+}
+.container .card .imgBox{
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    height: 220px;
+    transition: 0.5s;
+}
+
+.container .card:hover .imgBox {
+    top:-15%;
+}
+
+.container .card .imgBox img{
+    position: absolute;
+    width: 270px;
+    top: 10%;
+    left: 10%;
+    transform: rotate(-25deg) rotateY(180deg);
+}
+
+.container .card .contentBox{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index:10;
+}
+
+.container .card:hover .contentBox{
+    height: 230px;
+}
+
+.container .card .contentBox h2{
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.container .card .contentBox .size,
+.container .card .contentBox .colour,
+.container .card .contentBox .price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.container .card:hover .contentBox .size,
+.container .card:hover .contentBox .colour,
+.container .card:hover .contentBox .price{
+    opacity: 1;
+    visibility: visible;
+    transition-delay:0.5s;
+}
+.container .card .contentBox .size h3,
+.container .card .contentBox .colour h3,
+.container .card .contentBox .price h3{
+    color:#ffffff ;
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.container .card .contentBox .size span{
+ width: 25px;   
+ height: 25px;
+ text-align: center;
+ line-height: 25px;
+ font-size: 14px;
+ display: inline-block;
+ background: #ffffff;
+ color: #111111;
+ border-radius:5px;
+ margin: 0 5px;
+ transition: 0, 5s;
+}
+
+.container .card .contentBox .size span:hover{
+    background: #f47208;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.container .card .contentBox .colour span{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #f47208;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.container .card .contentBox .colour span:nth-child(2){
+    background: #f47208;
+}
+.container .card .contentBox .colour span:nth-child(3){
+    background: #1cadf0;
+}
+.container .card .contentBox .colour span:nth-child(4){
+    background: #ecf802;
+}
+.container .card:hover .contentBox a{
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay:0.5s ;
+}
+
+.container .card .contentBox a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+    background: #ffffff;
+    border-radius:4px;
+    margin-top:10px;
+    font-weight:600;
+    color:#111111;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.5s;
+}
+
